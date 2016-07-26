@@ -1,0 +1,15 @@
+<p>This is the feed view.</p>
+<p>{{ welcomeMsg }}</p>
+
+
+<button ng-click="login()" ng-hide="isLoggedIn">Login</button>
+<button ng-click="logout()" ng-show="isLoggedIn">Logout</button>
+
+{{ likes }} likes.
+
+<div ng-repeat="post in posts" class="item">
+  <span>{{ post.created_time | date }}</span>
+  <p>{{ post.message }}</p>
+  <img ng-src="{{ post.full_picture }}" width="100%" ng-dblclick="like(post.id)" />
+
+</div>
